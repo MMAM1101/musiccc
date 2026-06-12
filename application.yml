@@ -1,0 +1,54 @@
+server:
+  port: 2333
+  address: 0.0.0.0
+
+lavalink:
+  server:
+    password: "ضع_كلمة_سر_قوية_هنا"
+    # المصدر القديم المدمج لليوتيوب أصبح متوقفًا، نعتمد على plugin بديل بالأسفل
+    sources:
+      youtube: false
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      http: false
+      local: false
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 10
+    resamplingQuality: LOW
+    trackStuckThresholdMs: 10000
+    useSeekGhosting: true
+    playerUpdateInterval: 5
+    youtubePlaylistLoadLimit: 6
+
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.18.1"
+      repository: "https://maven.lavalink.dev/releases"
+
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+    allowDirectPlaylistIds: true
+    clients:
+      - MUSIC
+      - WEB
+      - ANDROID_VR
+      - TVHTML5_SIMPLY
+    oauth:
+      # أول ما يشتغل Lavalink، شيك على الـ Logs بترى رابط + كود من Google
+      # تفتح الرابط وتسجل دخول بحساب جوجل (أي حساب، حتى مستعمل ينصح به) لربط الـ Plugin
+      enabled: true
+      skipInitialization: false
+
+metrics:
+  prometheus:
+    enabled: false
+
+logging:
+  level:
+    root: INFO
+    lavalink: INFO
