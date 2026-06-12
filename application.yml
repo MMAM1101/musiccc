@@ -4,7 +4,7 @@ server:
 
 lavalink:
   server:
-    password: "ضع_كلمة_سر_قوية_هنا"
+    password: "AaSs1212"
     # المصدر القديم المدمج لليوتيوب أصبح متوقفًا، نعتمد على plugin بديل بالأسفل
     sources:
       youtube: false
